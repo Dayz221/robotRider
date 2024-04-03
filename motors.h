@@ -11,8 +11,5 @@ public:
     
     void setSpeed(int speed);
     void stopMotor(int break_time);
-    void fojvnfd();
-    void banana(int apelsina);
-    void wivgg(int divhsd);
 };
 
