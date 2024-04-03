@@ -12,6 +12,7 @@ public:
 private:
     int pin;
     int close_val, open_val;
+    void setServo(int pos);
 };
 
 class GripperSystem{
