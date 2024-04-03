@@ -15,7 +15,7 @@ void Motor::setSpeed(int speed) {
     digitalWrite(dir, HIGH);
     analogWrite(pwm, k*speed);
   } else if (speed < 0) {
-    digitalWrite(dir, HIGH);
+    digitalWrite(dir, LOW);
     analogWrite(pwm, -k*speed);
   } else {
     digitalWrite(dir, LOW);
@@ -29,9 +29,9 @@ void Motor::stopMotor(int break_time) {
   this->setSpeed(0);
 }
 
-void Motor::moveMilliseconds(int time, int speed) {
+void Motor::moveMilliseconds(int32_t time, int speed) {
   this->setSpeed(speed);
-  uint32_t start = millis();
+  int32_t start = millis();
   while (millis() - start < time);
-  this->stopMotor(15);
+  this->stopMotor(30);
 }

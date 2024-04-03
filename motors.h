@@ -11,5 +11,5 @@ public:
     
     void setSpeed(int speed);
     void stopMotor(int break_time);
-    void moveMilliseconds(int time, int speed);
+    void moveMilliseconds(int32_t time, int speed);
 };
