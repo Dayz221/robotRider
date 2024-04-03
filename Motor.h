@@ -20,12 +20,11 @@ private:
 
 class EncMotor: public Motor {
 public:
-    EncMotor(int dir, int pwm, bool isr, float k = 1.0f, int breakTime = 20, int stepsPer360 = 500);
+    EncMotor(int dir, int pwm, bool isr, float k = 1.0f, int breakTime = 20);
     bool rotateNSteps(int steps, int speed);
     int32_t getEncCnt();
 
 private:
-    int stepsPer360;
     int32_t* cnt;
     bool isr;
     int32_t last_steps = 0;

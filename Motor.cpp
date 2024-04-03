@@ -51,9 +51,8 @@ void Motor::stop() {
 }
 
 
-EncMotor::EncMotor(int dir, int pwm, bool isr, float k, int breakTime, int stepsPer360): Motor(dir, pwm, k, breakTime) {
+EncMotor::EncMotor(int dir, int pwm, bool isr, float k, int breakTime): Motor(dir, pwm, k, breakTime) {
     this->isr = isr;
-    this->stepsPer360 = stepsPer360;
 
     pinMode((isr) ? 3 : 2, INPUT_PULLUP);
 
