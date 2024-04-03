@@ -13,6 +13,5 @@ public:
     void stopMotor(int break_time);
     void fojvnfd();
     void banana(int apelsina);
-    klkk
 };
 
