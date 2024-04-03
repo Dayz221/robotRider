@@ -16,11 +16,22 @@ GripperServo GripperServo::operator= (GripperServo& other) {
 }
 
 void GripperServo::open() {
-
+    this->setServo(this->open_val);
 }
 
 void GripperServo::close() {
+    this->setServo(this->close_val);
+}
 
+void GripperServo::setServo(int pos){
+    for (int i=1;i<=180;i++){        
+        digitalWrite(pin, HIGH);
+        delayMicroseconds(pos);
+        digitalWrite(pin, LOW);
+        delayMicroseconds(20000-pos);
+        delay(1);
+    }
+    pos=0;
 }
 
 
