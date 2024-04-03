@@ -1,4 +1,4 @@
-#include <sharp.h>
+#include "sharp.h"
 
 Sharp::Sharp(int pin, int sen)
 {
