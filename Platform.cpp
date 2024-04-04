@@ -34,12 +34,12 @@ void Platform::rotateNSteps(int steps, int speed) {
 }
 
 void Platform::moveDist(int dist, int speed) {
-    int steps = ((float)dist/wheelRadius)*stepsPer360;
+    int steps = ((float)dist/(2.0f*3.14*wheelRadius))*stepsPer360;
     this->moveNSteps(steps, speed);
 }
 
 void Platform::rotateAng(int ang, int speed) {
-    int steps = ((3.1415 * 2 * clearence * ((float)ang/360))/wheelRadius)*stepsPer360;
+    int steps = ((3.1415 * 2 * clearence * ((float)ang/360))/(2.0f*3.14*wheelRadius))*stepsPer360;
     this->rotateNSteps(steps, speed);
 }
 

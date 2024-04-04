@@ -10,7 +10,7 @@ private:
     int stepsPer360;
 
 public:
-    Platform(EncMotor *leftMotor, EncMotor *rightMotor, float wheelRadius = 82, float clearence = 105, int stepsPer360 = 500);
+    Platform(EncMotor *leftMotor, EncMotor *rightMotor, float wheelRadius = 41, float clearence = 110, int stepsPer360 = 500);
     void move(int left, int right);
     void move(int speed);
     void stop();
