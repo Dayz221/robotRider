@@ -25,10 +25,12 @@ void Platform::stop() {
 
 void Platform::moveNSteps(int steps, int speed) {
     while(!leftMotor->rotateNSteps(steps, speed) && !rightMotor->rotateNSteps(steps, speed));
+    this->stop();
 }
 
 void Platform::rotateNSteps(int steps, int speed) {
     while(!leftMotor->rotateNSteps(steps, -speed) && !rightMotor->rotateNSteps(steps, speed));
+    this->stop();
 }
 
 void Platform::moveDist(int dist, int speed) {
@@ -39,4 +41,18 @@ void Platform::moveDist(int dist, int speed) {
 void Platform::rotateAng(int ang, int speed) {
     int steps = ((3.1415 * 2 * clearence * ((float)ang/360))/wheelRadius)*stepsPer360;
     this->rotateNSteps(steps, speed);
+}
+
+void Platform::moveMilliseconds(int32_t time, int speed) {
+    int32_t start = millis();
+    this->move(speed);
+    while (millis() - start < time);
+    this->stop();
+}
+
+void Platform::rotateMilliseconds(int32_t time, int speed) {
+    int32_t start = millis();
+    this->move(-speed, speed);
+    while (millis() - start < time);
+    this->stop();
 }

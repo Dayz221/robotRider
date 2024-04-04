@@ -18,4 +18,6 @@ public:
     void rotateNSteps(int steps, int speed);
     void moveDist(int dist, int speed);
     void rotateAng(int ang, int speed);
+    void moveMilliseconds(int32_t time, int speed);
+    void rotateMilliseconds(int32_t time, int speed);
 };
